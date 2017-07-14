@@ -36,6 +36,7 @@
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
     "html-webpack-plugin": "^2.29.0",
+    "prop-types": "^15.5.10",
     "style-loader": "^0.18.2",
     "webpack": "^3.2.0",
     "webpack-dev-server": "^2.5.1"
