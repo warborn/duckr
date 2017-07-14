@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class MainContainer extends Component {
-  render() {
+  render () {
     return (
       <p>Hello World!</p>
     )
