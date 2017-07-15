@@ -50,10 +50,10 @@ export function removeFetchingUser () {
   }
 }
 
-export function fetchAndHandleAuthedUser () {
+export function fetchAndHandleAuthedUser (authType) {
   return function (dispatch) {
     dispatch(fetchingUser())
-    return auth()
+    return auth(authType)
       .then(({ user, credential }) => { 
         const userData = user.providerData[0]
         const userInfo = formatUserInfo(userData.displayName, userData.photoURL, user.uid)
