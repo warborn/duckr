@@ -6,8 +6,17 @@ import { Authenticate } from 'components'
 import * as userActionCreators from 'redux/modules/users'
 
 class AuthenticateContainer extends Component {
-  handleAuth () {
+  constructor(props) {
+    super(props)
+
+    this.handleAuth = this.handleAuth.bind(this)
+  }
+
+  handleAuth (e) {
+    e.preventDefault();
+
     this.props.fetchAndHandleAuthedUser()
+      .then(() => this.context.router.history.replace('feed'))
   }
 
   render () {
@@ -15,7 +24,7 @@ class AuthenticateContainer extends Component {
       <Authenticate
         isFetching={this.props.isFetching}
         error={this.props.error}
-        onAuth={() => { this.handleAuth() }} />
+        onAuth={this.handleAuth} />
     )
   }
 }
@@ -24,6 +33,10 @@ AuthenticateContainer.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
   fetchAndHandleAuthedUser: PropTypes.func.isRequired
+}
+
+AuthenticateContainer.contextTypes = {
+  router: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state) {

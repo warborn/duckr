@@ -34,3 +34,7 @@ html, body {
   font-size: 1.375em;
   text-align: center;
 }
+
+.center {
+  text-align: center;
+}
