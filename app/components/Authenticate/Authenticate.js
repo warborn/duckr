@@ -9,11 +9,6 @@ Authenticate.propTypes = {
   onAuth: PropTypes.func.isRequired,
 }
 
-Authenticate.defaultProps = {
-  isFetching: false,
-  error: '',
-}
-
 export default function Authenticate ({ isFetching, error, onAuth }) {
   return (
     <div className={centeredContainer}>
