@@ -1,13 +1,7 @@
+import { ref, firebaseAuth } from 'config/constants'
+
 export function auth () {
-  return new Promise((resolve, reject) => {
-    setTimeout(function () {
-      resolve({
-        name: 'Iván Munguía',
-        avatar: 'https://avatars5.githubusercontent.com/u/10677789?v=4&u=bfa1469f5e796d5da4206b8d9596dbfcacf0ac0b&s=400',
-        uid: 'warborn',
-      })
-    }, 2000)
-  })
+  return firebaseAuth().signInWithPopup(new firebaseAuth.FacebookAuthProvider())
 }
 
 export function checkIfAuthed (store) {
@@ -15,5 +9,11 @@ export function checkIfAuthed (store) {
 }
 
 export function logout () {
-  console.log('logged out')
+  return firebaseAuth().signOut()
+}
+
+export function saveUser (user) {
+  return ref.child(`users/${user.uid}`)
+    .set(user)
+    .then(() => user)
 }

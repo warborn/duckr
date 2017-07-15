@@ -15,6 +15,10 @@ export default (BaseComponent, store) => {
     }
 
     checkAuthentication(props) {
+      if (store.getState().isFetching === true ) {
+        return
+      }
+      
       const { history } = props;
       const nextPathName = history.location.pathname
       const isAuthed = checkIfAuthed(store)
