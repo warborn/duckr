@@ -38,7 +38,7 @@
       name
       text
       timestamp
-      uid (od duck author)
+      uid (of duck author)
 
 /replies
   duckId

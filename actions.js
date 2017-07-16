@@ -70,7 +70,7 @@
 }
 
 {
-  type: SEETTING_FEED_LISTER_SUCCESS,
+  type: SETTING_FEED_LISTENER_SUCCESS,
   duckIds
 }
 
