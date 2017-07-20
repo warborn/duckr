@@ -3,7 +3,7 @@
 
 {
   users: {
-    isAuther,
+    isAuthed,
     isFetching
     error,
     authedId,

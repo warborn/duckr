@@ -111,6 +111,7 @@ export default function usersLikes(state = initialState, action) {
         .filter((duckId) => action.duckId !== duckId)
         .reduce((prev, current) => {
           prev[current] = state[current]
+          return prev
         }, {})
     default:
       return state

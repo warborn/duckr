@@ -10,6 +10,7 @@ class DuckContainer extends Component {
     super(props)
 
     this.handleClick = this.handleClick.bind(this)
+    this.goToProfile = this.goToProfile.bind(this)
   }
 
   goToProfile (e) {
@@ -18,15 +19,16 @@ class DuckContainer extends Component {
   }
 
   handleClick (e) {
+    console.log('replying')
     e.stopPropagation()
-    this.context.router.push(`/duck-detail/${this.props.duck.duckId}`)
+    this.context.router.history.push(`/duck-detail/${this.props.duck.duckId}`)
   }
 
   render () {
     return (
       <Duck 
         goToProfile={this.goToProfile}
-        onClick={this.props.hideReplyBtn === true ? null : this.props.handleClick}
+        onClick={this.handleClick}
         {...this.props} />
     )
   }
@@ -37,7 +39,7 @@ DuckContainer.contextTypes = {
 }
 
 DuckContainer.propTypes = {
-  duckId: PropTypes.string.isRequired,
+  duck: PropTypes.object.isRequired,
   numberOfLikes: PropTypes.number,
   isLiked: PropTypes.bool.isRequired,
   hideLikeCount: PropTypes.bool.isRequired,

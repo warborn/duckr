@@ -57,16 +57,16 @@ export default function likeCount(state = initialState, action) {
     case FETCHING_COUNT_SUCCESS:
       return {
         ...state,
-        isFetching: false,
+        ...initialState,
         [action.duckId]: action.count
       }
     case ADD_LIKE:
     case REMOVE_LIKE:
       return typeof state[action.duckId] === 'undefined'
-        ? state 
+        ? state
         : {
           ...state,
-          [action.duckId]: count(state[action.duckId], action)
+          [action.duckId]: count(state[action.duckId], action),
         }
     default:
       return state
