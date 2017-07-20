@@ -420,7 +420,7 @@ function usersLikes(state = initialState, action) {
         isFetching: false,
         error: action.error
       }
-    case FETCHING_FAILURE_SUCCESS:
+    case FETCHING_LIKES_SUCCESS:
       return {
         ...state,
         isFetching: false,

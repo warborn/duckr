@@ -203,6 +203,6 @@
 }
 
 {
-  type: REMOVE_DUCK,
+  type: REMOVE_LIKE,
   duckId
 }
