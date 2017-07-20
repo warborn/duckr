@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Duck } from 'components'
+import * as usersLikesActions from 'redux/modules/usersLikes'
 
 class DuckContainer extends Component {
   constructor(props) {
@@ -59,6 +61,11 @@ function mapStateToProps ({ ducks, likeCount, usersLikes }, props) {
   }
 }
 
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators(usersLikesActions, dispatch)
+}
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(DuckContainer)
