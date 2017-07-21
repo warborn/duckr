@@ -19,7 +19,6 @@ class DuckContainer extends Component {
   }
 
   handleClick (e) {
-    console.log('replying')
     e.stopPropagation()
     this.context.router.history.push(`/duck-detail/${this.props.duck.duckId}`)
   }

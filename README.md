@@ -14,6 +14,7 @@ Twitter like application built with ReactJS + Redux
 - Authentication
 - Realtime Updates
 - Error Handling
+- High Order Components
 
 ## Installation
 

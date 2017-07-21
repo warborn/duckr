@@ -62,3 +62,13 @@ export function decrementNumberOfLikes (duckId) {
   return ref.child(`likeCount/${duckId}`)
     .transaction((currentValue = 0)  => currentValue - 1)
 }
+
+export function fetchUser (uid) {
+  return ref.child(`users/${uid}`).once('value')
+    .then((snapshot) => snapshot.val())
+}
+
+export function fetchUsersDucks (uid) {
+  return ref.child(`usersDucks/${uid}`).once('value')
+    .then((snapshot) => snapshot.val() || {})
+}
