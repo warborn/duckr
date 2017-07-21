@@ -210,7 +210,7 @@ function modal(state = initialState, action) {
 
 // Replies
 const initialStateReply = {
-  name '',
+  name: '',
   reply: '',
   uid: '',
   timestamp: 0,
