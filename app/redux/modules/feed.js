@@ -43,7 +43,6 @@ export function resetNewDucksAvailable() {
 }
 
 export function setAndHandleFeedListener () {
-  let initialFetch = true
   return function (dispatch, getState) {
     if(getState().listeners.feed === true ) {
       return
@@ -52,7 +51,7 @@ export function setAndHandleFeedListener () {
     dispatch(addListener('feed'))
     dispatch(settingFeedListener())
 
-    listenToFeed(({ feed, sortedIds }) => {
+    listenToFeed(({ feed, sortedIds }, initialFetch) => {
       dispatch(addMultipleDucks(feed))
       initialFetch === true
         ? dispatch(settingFeedListenerSuccess(sortedIds))
@@ -99,7 +98,7 @@ export default function feed(state = initialState, action) {
     case RESET_NEW_DUCKS_AVAILABLE:
       return {
         ...state,
-        duckIds: [...state.newDucksToAdd, ...state.ducksIds],
+        duckIds: [...state.newDucksToAdd, ...state.duckIds],
         newDucksToAdd: [],
         newDucksAvailable: false
       }
