@@ -1,6 +1,8 @@
 # Ducker
 
-Twitter like application built with ReactJS + Redux
+Twitter like application built with ReactJS + Redux based on the Redux course from [Tyler McGinnis](https://tylermcginnis.com/courses/redux/)
+
+[List of changes made to the app to work with React (v15.6) and React Router (v4.1)](https://gist.github.com/warborn/05031ea49858c85481bb6bd96c0cc605)
 
 ## Features
 
